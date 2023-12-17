@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 5.4//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration/hibernate-configuration-5.4.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://localhost;databaseName=hrms</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">12345678</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+		<!--Enable query cache -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!--Enable second level cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+		<!-- Class mapping -->
+		<mapping class="fa.training.entities.Jobs" />
+		<mapping class="fa.training.entities.JobDetails" />
+		<mapping class="fa.training.entities.Employees" />
+		<mapping class="fa.training.entities.Projects" />
+		<mapping class="fa.training.entities.JobHistory" />
+		<mapping class="fa.training.entities.Book" />
+		<mapping class="fa.training.entities.Publisher" />
+		<mapping class="fa.training.entities.PublisherBook" />
+		<mapping class="fa.training.entities2.Book" />
+		<mapping class="fa.training.entities2.Publisher" />
+		<mapping class="fa.training.entities2.PublisherBook" />
+		<mapping class="fa.training.entities.User" />
+		<mapping class="fa.training.entities.UserDetail" />
+		<mapping class="fa.training.entities.Departments" />
+	</session-factory>
+</hibernate-configuration>
